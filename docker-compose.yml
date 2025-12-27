@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  activemq:
+    image: apache/activemq-classic:latest
+    ports:
+      - "61616:61616"  # JMS port
+      - "8161:8161"    # Web console
+    environment:
+      ACTIVEMQ_ADMIN_LOGIN: admin
+      ACTIVEMQ_ADMIN_PASSWORD: admin
+    volumes:
+      - activemq-data:/opt/activemq/data
+
+  postgres:
+    image: postgres:15
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: government_db
+      POSTGRES_USER: gov_user
+      POSTGRES_PASSWORD: gov_pass
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+volumes:
+  activemq-data:
+  postgres-data:

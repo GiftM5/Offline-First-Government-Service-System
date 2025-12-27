@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Application Status</title>
+</head>
+<body>
+    <h1>Application Status</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Citizen ID</th>
+            <th>Service Type</th>
+            <th>Status</th>
+            <th>Synced</th>
+            <th>Created At</th>
+        </tr>
+        <tr th:each="app : ${applications}">
+            <td th:text="${app.id}"></td>
+            <td th:text="${app.citizenId}"></td>
+            <td th:text="${app.serviceType}"></td>
+            <td th:text="${app.status}"></td>
+            <td th:text="${app.synced}"></td>
+            <td th:text="${app.createdAt}"></td>
+        </tr>
+    </table>
+    <br>
+    <a href="/">Submit New Application</a>
+</body>
+</html>

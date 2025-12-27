@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Application Form</title>
+</head>
+<body>
+    <h1>Government Service Application</h1>
+    <form action="/submit" method="post">
+        Citizen ID: <input type="text" name="citizenId" required><br><br>
+        Service Type: <select name="serviceType">
+            <option value="NATIONAL_ID">National ID</option>
+            <option value="PERMIT">Permit</option>
+            <option value="GRANT">Grant</option>
+        </select><br><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
